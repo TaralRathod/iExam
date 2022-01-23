@@ -2,7 +2,7 @@
 //  iExamUITestsLaunchTests.swift
 //  iExamUITests
 //
-//  Created by Twinkle Rathod on 20/01/22.
+//  Created by Taral Rathod on 20/01/22.
 //
 
 import XCTest
