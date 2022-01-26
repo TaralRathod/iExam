@@ -18,9 +18,11 @@ class InformationViewController: UIViewController {
 
     var infoViewModel: InformationViewModel?
     var controllerData: ExamData?
+    var navigator: Navigator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigator = Navigator(vc: self)
         setupUI()
         populateData()
     }
@@ -59,6 +61,13 @@ class InformationViewController: UIViewController {
 
     @IBAction func getStartedBtnTapped(_ sender: Any) {
         DispatchQueue.main.async {
+            guard let vc = self.navigator?.instantiateVC(withDestinationViewControllerType: QuestionsViewController.self) else { return }
+            vc.controllerData = self.controllerData
+            let navController = UINavigationController(rootViewController: vc)
+            self.navigator?.goTo(viewController: navController,
+                                 withDisplayVCType: .present,
+                                 andModalTransitionStyle: .crossDissolve)
+            
         }
     }
 }

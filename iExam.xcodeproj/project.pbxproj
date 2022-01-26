@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012069A127A12BB7005AA11C /* QuestionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012069A027A12BB7005AA11C /* QuestionsCell.swift */; };
+		01797ECE279ED77E00361AC1 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01797ECD279ED77E00361AC1 /* QuestionsViewModel.swift */; };
+		01797F24279EE34000361AC1 /* KatexMathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01797ECF279EE34000361AC1 /* KatexMathView.swift */; };
+		01797F77279EE63300361AC1 /* katex in Resources */ = {isa = PBXBuildFile; fileRef = 01797F76279EE63300361AC1 /* katex */; };
 		018EE3AD279D3AC4008878CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EE3AC279D3AC4008878CC /* Constants.swift */; };
 		018EE3AF279D3C36008878CC /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EE3AE279D3C36008878CC /* Navigator.swift */; };
 		018EE3B1279D9E78008878CC /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EE3B0279D9E78008878CC /* QuestionsViewController.swift */; };
+		018EE3B3279E7CC9008878CC /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EE3B2279E7CC9008878CC /* QuestionCell.swift */; };
+		018EE3B5279E7CE9008878CC /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EE3B4279E7CE9008878CC /* OptionsCell.swift */; };
 		01E0A9972799BAD800A5B11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0A9962799BAD800A5B11E /* AppDelegate.swift */; };
 		01E0A9992799BAD800A5B11E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0A9982799BAD800A5B11E /* SceneDelegate.swift */; };
 		01E0A99B2799BAD800A5B11E /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0A99A2799BAD800A5B11E /* LandingPageViewController.swift */; };
@@ -45,9 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012069A027A12BB7005AA11C /* QuestionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsCell.swift; sourceTree = "<group>"; };
+		01797ECD279ED77E00361AC1 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
+		01797ECF279EE34000361AC1 /* KatexMathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KatexMathView.swift; sourceTree = "<group>"; };
+		01797F76279EE63300361AC1 /* katex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = katex; sourceTree = "<group>"; };
 		018EE3AC279D3AC4008878CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		018EE3AE279D3C36008878CC /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		018EE3B0279D9E78008878CC /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		018EE3B2279E7CC9008878CC /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		018EE3B4279E7CE9008878CC /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		01E0A9932799BAD800A5B11E /* iExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E0A9962799BAD800A5B11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E0A9982799BAD800A5B11E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +109,7 @@
 		01E0A98A2799BAD800A5B11E = {
 			isa = PBXGroup;
 			children = (
+				01797F76279EE63300361AC1 /* katex */,
 				01E0A9952799BAD800A5B11E /* iExam */,
 				01E0A9AC2799BADA00A5B11E /* iExamTests */,
 				01E0A9B62799BADA00A5B11E /* iExamUITests */,
@@ -117,6 +130,7 @@
 		01E0A9952799BAD800A5B11E /* iExam */ = {
 			isa = PBXGroup;
 			children = (
+				01797ECF279EE34000361AC1 /* KatexMathView.swift */,
 				01E0A9962799BAD800A5B11E /* AppDelegate.swift */,
 				01E0A9D3279AD5A400A5B11E /* NetworkManager.swift */,
 				01E0A9C6279AB3B300A5B11E /* InformationViewController.swift */,
@@ -126,8 +140,12 @@
 				01E0A9CF279AD12C00A5B11E /* LandingPageViewModel.swift */,
 				01E0A9CA279AB87200A5B11E /* UIView+Extension.swift */,
 				018EE3B0279D9E78008878CC /* QuestionsViewController.swift */,
+				01797ECD279ED77E00361AC1 /* QuestionsViewModel.swift */,
 				018EE3AE279D3C36008878CC /* Navigator.swift */,
 				018EE3AC279D3AC4008878CC /* Constants.swift */,
+				018EE3B2279E7CC9008878CC /* QuestionCell.swift */,
+				012069A027A12BB7005AA11C /* QuestionsCell.swift */,
+				018EE3B4279E7CE9008878CC /* OptionsCell.swift */,
 				01E0A99C2799BAD800A5B11E /* Main.storyboard */,
 				01E0A99F2799BADA00A5B11E /* Assets.xcassets */,
 				01E0A9A12799BADA00A5B11E /* LaunchScreen.storyboard */,
@@ -265,6 +283,7 @@
 			files = (
 				01E0A9A32799BADA00A5B11E /* LaunchScreen.storyboard in Resources */,
 				01E0A9A02799BADA00A5B11E /* Assets.xcassets in Resources */,
+				01797F77279EE63300361AC1 /* katex in Resources */,
 				01E0A99E2799BAD800A5B11E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,15 +309,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01797F24279EE34000361AC1 /* KatexMathView.swift in Sources */,
 				018EE3B1279D9E78008878CC /* QuestionsViewController.swift in Sources */,
 				01E0A99B2799BAD800A5B11E /* LandingPageViewController.swift in Sources */,
 				01E0A9972799BAD800A5B11E /* AppDelegate.swift in Sources */,
 				01E0A9992799BAD800A5B11E /* SceneDelegate.swift in Sources */,
+				01797ECE279ED77E00361AC1 /* QuestionsViewModel.swift in Sources */,
 				01E0A9D0279AD12C00A5B11E /* LandingPageViewModel.swift in Sources */,
 				01E0A9D4279AD5A400A5B11E /* NetworkManager.swift in Sources */,
 				01E0A9CB279AB87200A5B11E /* UIView+Extension.swift in Sources */,
+				012069A127A12BB7005AA11C /* QuestionsCell.swift in Sources */,
+				018EE3B5279E7CE9008878CC /* OptionsCell.swift in Sources */,
 				018EE3AF279D3C36008878CC /* Navigator.swift in Sources */,
 				01E0A9C7279AB3B300A5B11E /* InformationViewController.swift in Sources */,
+				018EE3B3279E7CC9008878CC /* QuestionCell.swift in Sources */,
 				01E0A9D2279AD47200A5B11E /* InformationViewModel.swift in Sources */,
 				018EE3AD279D3AC4008878CC /* Constants.swift in Sources */,
 			);

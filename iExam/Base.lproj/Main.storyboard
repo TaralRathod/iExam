@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -125,20 +126,167 @@
             </objects>
             <point key="canvasLocation" x="1246.376811594203" y="70.982142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Questions View Controller-->
         <scene sceneID="77S-k5-wLa">
             <objects>
-                <viewController id="4Lb-1C-UVF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsViewController" id="4Lb-1C-UVF" customClass="QuestionsViewController" customModule="iExam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVh-fg-gDo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aJb-cS-Ee8">
+                                <rect key="frame" x="0.0" y="91" width="320" height="386"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1SI-hB-bZP">
+                                    <size key="itemSize" width="255" height="377"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="questionCell" id="jfw-RU-Avb" customClass="QuestionCell" customModule="iExam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4.5" width="255" height="377"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DzZ-Sd-PLO">
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="377"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O7a-En-TSp">
+                                                    <rect key="frame" x="7" y="8" width="240" height="361"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="questionsCell" id="RVd-Tt-fWp" customClass="QuestionsCell" customModule="iExam" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="44.5" width="240" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RVd-Tt-fWp" id="0DH-z2-Q4h">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2V-wf-25w" customClass="KatexMathView" customModule="iExam" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="43.5" id="tOW-nG-7ih"/>
+                                                                        </constraints>
+                                                                        <wkWebViewConfiguration key="configuration">
+                                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                                            <wkPreferences key="preferences"/>
+                                                                        </wkWebViewConfiguration>
+                                                                    </wkWebView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="m2V-wf-25w" secondAttribute="bottom" id="H0X-hX-BBq"/>
+                                                                    <constraint firstItem="m2V-wf-25w" firstAttribute="leading" secondItem="0DH-z2-Q4h" secondAttribute="leading" id="N4l-Y6-2MQ"/>
+                                                                    <constraint firstItem="m2V-wf-25w" firstAttribute="top" secondItem="0DH-z2-Q4h" secondAttribute="top" id="bUq-kC-Ubv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="m2V-wf-25w" secondAttribute="trailing" id="t4c-i0-gM0"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="questionsLabel" destination="m2V-wf-25w" id="eab-ee-emM"/>
+                                                                <outlet property="questionsLabelHeight" destination="tOW-nG-7ih" id="3FJ-WT-XG5"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="optionsCell" rowHeight="44" id="nO6-4Q-s0J" customClass="OptionsCell" customModule="iExam" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="88.5" width="240" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nO6-4Q-s0J" id="egc-KH-frs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-8t-yxk">
+                                                                        <rect key="frame" x="16" y="22" width="0.0" height="0.0"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="90n-8t-yxk" secondAttribute="height" multiplier="1:1" id="GIB-aU-Xck"/>
+                                                                            <constraint firstAttribute="height" id="djK-d7-dth"/>
+                                                                        </constraints>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                                        <connections>
+                                                                            <action selector="radioBtnTapped:" destination="nO6-4Q-s0J" eventType="touchUpInside" id="Ce3-am-YAg"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-hr-94S" customClass="KatexMathView" customModule="iExam" customModuleProvider="target">
+                                                                        <rect key="frame" x="16" y="11" width="216" height="25"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="25" id="bwa-Co-alt"/>
+                                                                        </constraints>
+                                                                        <wkWebViewConfiguration key="configuration">
+                                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                                            <wkPreferences key="preferences"/>
+                                                                        </wkWebViewConfiguration>
+                                                                    </wkWebView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="YUT-hr-94S" firstAttribute="top" secondItem="egc-KH-frs" secondAttribute="top" constant="11" id="Fhu-rh-QsL"/>
+                                                                    <constraint firstItem="90n-8t-yxk" firstAttribute="leading" secondItem="egc-KH-frs" secondAttribute="leading" constant="16" id="Ltc-3z-2Bg"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="YUT-hr-94S" secondAttribute="trailing" constant="8" id="U51-xS-0gO"/>
+                                                                    <constraint firstItem="YUT-hr-94S" firstAttribute="leading" secondItem="90n-8t-yxk" secondAttribute="trailing" id="kak-Zd-khX"/>
+                                                                    <constraint firstItem="90n-8t-yxk" firstAttribute="centerY" secondItem="egc-KH-frs" secondAttribute="centerY" id="saQ-va-Gjw"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="YUT-hr-94S" secondAttribute="bottom" constant="8" id="vq5-Ks-kDr"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="optionLabelHeight" destination="bwa-Co-alt" id="hvY-o2-VP0"/>
+                                                                <outlet property="optionTextLabel" destination="YUT-hr-94S" id="tSq-ls-k6l"/>
+                                                                <outlet property="radioBtn" destination="90n-8t-yxk" id="DMi-Qg-dkr"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                </tableView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="O7a-En-TSp" secondAttribute="bottom" constant="8" id="KIZ-kq-BXp"/>
+                                                <constraint firstAttribute="trailing" secondItem="O7a-En-TSp" secondAttribute="trailing" constant="8" id="MdP-ds-7gA"/>
+                                                <constraint firstItem="O7a-En-TSp" firstAttribute="top" secondItem="DzZ-Sd-PLO" secondAttribute="top" constant="8" id="OR5-yt-uRP"/>
+                                                <constraint firstItem="O7a-En-TSp" firstAttribute="leading" secondItem="DzZ-Sd-PLO" secondAttribute="leading" constant="7" id="k9Y-8x-BiC"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="255" height="377"/>
+                                        <connections>
+                                            <outlet property="optionsTableView" destination="O7a-En-TSp" id="jbh-Od-CRO"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anV-qb-DJJ">
+                                <rect key="frame" x="16" y="498" width="288" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="72b-oW-IL3"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitBtnTapped:" destination="4Lb-1C-UVF" eventType="touchUpInside" id="g1V-KG-V7s"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QTj-Sf-3gi"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aJb-cS-Ee8" firstAttribute="leading" secondItem="QTj-Sf-3gi" secondAttribute="leading" id="AFC-bh-ajd"/>
+                            <constraint firstItem="aJb-cS-Ee8" firstAttribute="centerY" secondItem="eVh-fg-gDo" secondAttribute="centerY" id="EmO-Ut-1pt"/>
+                            <constraint firstItem="aJb-cS-Ee8" firstAttribute="trailing" secondItem="QTj-Sf-3gi" secondAttribute="trailing" id="FrW-JU-G4X"/>
+                            <constraint firstItem="QTj-Sf-3gi" firstAttribute="bottom" secondItem="anV-qb-DJJ" secondAttribute="bottom" constant="20" id="Fw1-7h-yM1"/>
+                            <constraint firstItem="QTj-Sf-3gi" firstAttribute="trailing" secondItem="anV-qb-DJJ" secondAttribute="trailing" constant="16" id="OKH-cg-Aua"/>
+                            <constraint firstItem="aJb-cS-Ee8" firstAttribute="centerX" secondItem="eVh-fg-gDo" secondAttribute="centerX" id="TMq-dz-ie0"/>
+                            <constraint firstItem="anV-qb-DJJ" firstAttribute="top" secondItem="aJb-cS-Ee8" secondAttribute="bottom" priority="550" constant="21" id="U7R-rm-TFf"/>
+                            <constraint firstItem="anV-qb-DJJ" firstAttribute="leading" secondItem="QTj-Sf-3gi" secondAttribute="leading" constant="16" id="bVb-3G-ZPi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="questionsCollectionView" destination="aJb-cS-Ee8" id="ABw-Qd-Heg"/>
+                        <outlet property="submitBtn" destination="anV-qb-DJJ" id="3Do-dZ-CRR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7p-yy-pTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953" y="58"/>
+            <point key="canvasLocation" x="1951.875" y="57.04225352112676"/>
         </scene>
         <!--Landing Page View Controller-->
         <scene sceneID="XBf-tI-0kp">
