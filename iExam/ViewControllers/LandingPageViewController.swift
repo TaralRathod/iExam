@@ -16,9 +16,12 @@ class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        landingPageViewModel = LandingPageViewModel(delegate: self)
         navigator = Navigator(vc: self)
         setBackgroundColor()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        landingPageViewModel = LandingPageViewModel(delegate: self)
         addShimmerEffect()
     }
 
@@ -38,10 +41,21 @@ class LandingPageViewController: UIViewController {
 }
 
 extension LandingPageViewController: LandingPageDelegate {
-    func dataReceived(model: ExamData) {
+    func dataReceived(model: Assessment) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
             appNameLabel.stopShimmering()
             guard let vc = self.navigator?.instantiateVC(withDestinationViewControllerType: InformationViewController.self) else { return }
+            vc.controllerData = model
+            self.navigator?.goTo(viewController: vc,
+                                 withDisplayVCType: .present,
+                                 andModalTransitionStyle: .crossDissolve)
+        }
+    }
+
+    func navigateToResultScreen(model: Assessment) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            appNameLabel.stopShimmering()
+            guard let vc = self.navigator?.instantiateVC(withDestinationViewControllerType: ResultViewController.self) else { return }
             vc.controllerData = model
             self.navigator?.goTo(viewController: vc,
                                  withDisplayVCType: .present,

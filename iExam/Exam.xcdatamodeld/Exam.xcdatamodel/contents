@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
+        <attribute name="assessmentId" optional="YES" attributeType="String"/>
+        <attribute name="assessmentName" optional="YES" attributeType="String"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="isSubmitted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="totalMarks" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Questions" inverseName="assessment" inverseEntity="Questions"/>
+    </entity>
+    <entity name="Questions" representedClassName="Questions" parentEntity="Assessment" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="marks" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mcOptions" optional="YES" attributeType="Transformable" customClassName="[[String: Bool]]"/>
+        <attribute name="qno" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="assessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assessment" inverseName="questions" inverseEntity="Assessment"/>
+    </entity>
+    <elements>
+        <element name="Assessment" positionX="-316.796875" positionY="51.10546875" width="128" height="148"/>
+        <element name="Questions" positionX="-54" positionY="27" width="128" height="148"/>
+    </elements>
+</model>

@@ -17,7 +17,7 @@ class InformationViewController: UIViewController {
     @IBOutlet weak var getStartedButton: UIButton!
 
     var infoViewModel: InformationViewModel?
-    var controllerData: ExamData?
+    var controllerData: Assessment?
     var navigator: Navigator?
 
     override func viewDidLoad() {
@@ -55,8 +55,8 @@ class InformationViewController: UIViewController {
         guard let data = controllerData else {return}
         assignmentNameLabel.text = Constants.assesmentName + (data.assessmentName ?? Constants.blankString)
         subjectLabel.text = Constants.subject + (data.subject ?? Constants.blankString)
-        durationLabel.text = Constants.duration + String(describing: data.duration!) + Constants.minutes
-        marksLabel.text = Constants.totalMarks + String(describing: data.totalMarks!)
+        durationLabel.text = Constants.duration + String(describing: data.duration) + Constants.minutes
+        marksLabel.text = Constants.totalMarks + String(describing: data.totalMarks)
     }
 
     @IBAction func getStartedBtnTapped(_ sender: Any) {

@@ -68,7 +68,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="enX-nW-nec"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Get Started">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -152,19 +152,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="O7a-En-TSp">
-                                                    <rect key="frame" x="7" y="8" width="240" height="361"/>
+                                                    <rect key="frame" x="8" y="8" width="239" height="361"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                                    <inset key="separatorInset" minX="1000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="questionsCell" id="RVd-Tt-fWp" customClass="QuestionsCell" customModule="iExam" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="44.5" width="240" height="44"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="239" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RVd-Tt-fWp" id="0DH-z2-Q4h">
-                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="239" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2V-wf-25w" customClass="KatexMathView" customModule="iExam" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="239" height="44"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="43.5" id="tOW-nG-7ih"/>
@@ -182,16 +182,17 @@
                                                                     <constraint firstAttribute="trailing" secondItem="m2V-wf-25w" secondAttribute="trailing" id="t4c-i0-gM0"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <inset key="separatorInset" minX="10000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             <connections>
                                                                 <outlet property="questionsLabel" destination="m2V-wf-25w" id="eab-ee-emM"/>
                                                                 <outlet property="questionsLabelHeight" destination="tOW-nG-7ih" id="3FJ-WT-XG5"/>
                                                             </connections>
                                                         </tableViewCell>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="optionsCell" rowHeight="44" id="nO6-4Q-s0J" customClass="OptionsCell" customModule="iExam" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="88.5" width="240" height="44"/>
+                                                            <rect key="frame" x="0.0" y="88.5" width="239" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nO6-4Q-s0J" id="egc-KH-frs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="239" height="44"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90n-8t-yxk">
@@ -207,7 +208,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-hr-94S" customClass="KatexMathView" customModule="iExam" customModuleProvider="target">
-                                                                        <rect key="frame" x="16" y="11" width="216" height="25"/>
+                                                                        <rect key="frame" x="16" y="11" width="215" height="25"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="bwa-Co-alt"/>
@@ -227,6 +228,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="YUT-hr-94S" secondAttribute="bottom" constant="8" id="vq5-Ks-kDr"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
+                                                            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                                             <connections>
                                                                 <outlet property="optionLabelHeight" destination="bwa-Co-alt" id="hvY-o2-VP0"/>
                                                                 <outlet property="optionTextLabel" destination="YUT-hr-94S" id="tSq-ls-k6l"/>
@@ -237,10 +239,10 @@
                                                 </tableView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="O7a-En-TSp" secondAttribute="trailing" constant="8" id="B0z-hh-TeT"/>
                                                 <constraint firstAttribute="bottom" secondItem="O7a-En-TSp" secondAttribute="bottom" constant="8" id="KIZ-kq-BXp"/>
-                                                <constraint firstAttribute="trailing" secondItem="O7a-En-TSp" secondAttribute="trailing" constant="8" id="MdP-ds-7gA"/>
+                                                <constraint firstItem="O7a-En-TSp" firstAttribute="leading" secondItem="DzZ-Sd-PLO" secondAttribute="leading" constant="8" id="MYV-6A-8Bo"/>
                                                 <constraint firstItem="O7a-En-TSp" firstAttribute="top" secondItem="DzZ-Sd-PLO" secondAttribute="top" constant="8" id="OR5-yt-uRP"/>
-                                                <constraint firstItem="O7a-En-TSp" firstAttribute="leading" secondItem="DzZ-Sd-PLO" secondAttribute="leading" constant="7" id="k9Y-8x-BiC"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,6 +259,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="72b-oW-IL3"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -287,6 +290,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7p-yy-pTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951.875" y="57.04225352112676"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="1c0-d4-v5e">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="XWC-jV-vXv" customClass="ResultViewController" customModule="iExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xrX-IU-Ald">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dex-xo-Iti">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 / 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53O-in-Cmy">
+                                <rect key="frame" x="120" y="244" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="01z-vr-yNQ"/>
+                                    <constraint firstAttribute="width" secondItem="53O-in-Cmy" secondAttribute="height" multiplier="1:1" id="KYA-GF-qS3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D96-xh-0gX">
+                                <rect key="frame" x="16" y="117" width="288" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pC3-jM-gpf">
+                                <rect key="frame" x="16" y="498" width="288" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ENO-D0-xlo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Retake Test">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="retakeTestBtnTapped:" destination="XWC-jV-vXv" eventType="touchUpInside" id="CoR-Tq-Hb5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67P-4r-ih4">
+                                <rect key="frame" x="16" y="432" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zgf-IY-v0t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="See Answers">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="seeAnsersBtnTapped:" destination="XWC-jV-vXv" eventType="touchUpInside" id="zds-sd-tQO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lG2-Ab-W02"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dex-xo-Iti" firstAttribute="trailing" secondItem="lG2-Ab-W02" secondAttribute="trailing" id="5Db-2m-sWB"/>
+                            <constraint firstItem="dex-xo-Iti" firstAttribute="top" secondItem="lG2-Ab-W02" secondAttribute="top" id="HsB-xv-oF8"/>
+                            <constraint firstItem="53O-in-Cmy" firstAttribute="centerY" secondItem="xrX-IU-Ald" secondAttribute="centerY" id="JcN-1e-h0l"/>
+                            <constraint firstItem="lG2-Ab-W02" firstAttribute="trailing" secondItem="67P-4r-ih4" secondAttribute="trailing" constant="16" id="NuO-g7-BCZ"/>
+                            <constraint firstItem="dex-xo-Iti" firstAttribute="leading" secondItem="lG2-Ab-W02" secondAttribute="leading" id="T45-xY-cCF"/>
+                            <constraint firstItem="lG2-Ab-W02" firstAttribute="trailing" secondItem="D96-xh-0gX" secondAttribute="trailing" constant="16" id="Vdl-eW-qWy"/>
+                            <constraint firstItem="67P-4r-ih4" firstAttribute="leading" secondItem="lG2-Ab-W02" secondAttribute="leading" constant="16" id="Xjx-cu-zP9"/>
+                            <constraint firstItem="lG2-Ab-W02" firstAttribute="bottom" secondItem="pC3-jM-gpf" secondAttribute="bottom" constant="20" id="YZ4-XO-xeL"/>
+                            <constraint firstItem="53O-in-Cmy" firstAttribute="centerX" secondItem="xrX-IU-Ald" secondAttribute="centerX" id="YoK-C5-mDd"/>
+                            <constraint firstItem="D96-xh-0gX" firstAttribute="leading" secondItem="lG2-Ab-W02" secondAttribute="leading" constant="16" id="dwa-yX-5Dl"/>
+                            <constraint firstItem="pC3-jM-gpf" firstAttribute="top" secondItem="67P-4r-ih4" secondAttribute="bottom" constant="16" id="eZF-DA-V8R"/>
+                            <constraint firstItem="53O-in-Cmy" firstAttribute="top" secondItem="D96-xh-0gX" secondAttribute="bottom" constant="85" id="gYE-3P-Ohn"/>
+                            <constraint firstItem="lG2-Ab-W02" firstAttribute="trailing" secondItem="pC3-jM-gpf" secondAttribute="trailing" constant="16" id="mal-Pq-wYH"/>
+                            <constraint firstItem="pC3-jM-gpf" firstAttribute="leading" secondItem="lG2-Ab-W02" secondAttribute="leading" constant="16" id="muU-kF-2B3"/>
+                            <constraint firstItem="dex-xo-Iti" firstAttribute="bottom" secondItem="lG2-Ab-W02" secondAttribute="bottom" id="tFf-7f-zxd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="retakeTestBtn" destination="pC3-jM-gpf" id="6gS-Hp-BZt"/>
+                        <outlet property="scoreLabel" destination="53O-in-Cmy" id="WcF-xb-ULC"/>
+                        <outlet property="seeAnswersBtn" destination="67P-4r-ih4" id="GA4-2h-2zb"/>
+                        <outlet property="webView" destination="dex-xo-Iti" id="tfi-0N-dL2"/>
+                        <outlet property="yourScoreLabel" destination="D96-xh-0gX" id="Het-iI-fig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQ3-R4-sVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="57.04225352112676"/>
         </scene>
         <!--Landing Page View Controller-->
         <scene sceneID="XBf-tI-0kp">
@@ -340,8 +437,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -2,7 +2,7 @@
 //  QuestionsCell.swift
 //  iExam
 //
-//  Created by Twinkle Rathod on 26/01/22.
+//  Created by Taral Rathod on 26/01/22.
 //
 
 import UIKit

@@ -2,28 +2,34 @@
 //  QuestionCell.swift
 //  iExam
 //
-//  Created by Twinkle Rathod on 24/01/22.
+//  Created by Taral Rathod on 24/01/22.
 //
 
 import UIKit
 import WebKit
+import CoreData
 
 class QuestionCell: UICollectionViewCell {
 
     @IBOutlet weak var optionsTableView: UITableView!
     
-    var optionsArray: [String]?
+    var optionsArray: [[String: Bool]]?
     var content: [String] = []
     var contentHeights: [CGFloat]?
+    var questionId = Constants.blankString
+    var isForAnswers = false
 
     override func awakeFromNib() {
         setupTableView()
     }
 
-    func setupUI(question: QuestionData) {
+    func setupUI(question: Questions) {
         optionsArray = question.mcOptions
+        questionId = question.id ?? Constants.blankString
         content = [question.text ?? Constants.blankString]
-        content.append(contentsOf: question.mcOptions ?? [String]())
+        for option in question.mcOptions! {
+            content.append(option.keys.first ?? Constants.blankString)
+        }
         contentHeights = [CGFloat](repeating: 0.0, count: content.count)
     }
 
@@ -32,11 +38,28 @@ class QuestionCell: UICollectionViewCell {
         optionsTableView.dataSource = self
         optionsTableView.tableFooterView = UIView()
     }
+
+    func updateValueInStore() {
+        let fetchRequest = NSFetchRequest<Questions>(entityName: Constants.questionsEntity)
+        let predicate = NSPredicate(format: "id = %@", questionId)
+        fetchRequest.predicate = predicate
+        do {
+            let result = try Constants.VIEW_CONTEXT.fetch(fetchRequest)
+            if result.count == 1 {
+                guard let question = result.first else {return}
+                question.mcOptions = optionsArray
+                try Constants.VIEW_CONTEXT.save()
+                debugPrint ( "Question Saved Successfully")
+            }
+        } catch {
+            debugPrint("Result not found")
+        }
+    }
 }
 
 extension QuestionCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (optionsArray?.count ?? 0) + 1
+        return (optionsArray?.count ?? 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,15 +70,20 @@ extension QuestionCell: UITableViewDelegate, UITableViewDataSource {
             cell.questionsLabel.tag = indexPath.row + 100
             let htmlHeight = contentHeights?[indexPath.row]
             cell.questionsLabelHeight.constant = htmlHeight ?? 0
+            cell.selectionStyle = .none
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.optionsCell, for: indexPath) as? OptionsCell else {return UITableViewCell()}
-            guard let option = optionsArray?[indexPath.row - 1] else {return UITableViewCell()}
-            cell.setupUI(option: option)
+            guard let option = optionsArray?[indexPath.row] else {return UITableViewCell()}
+            cell.setupUI(option: option.keys.first ?? Constants.blankString)
+            tableView.separatorColor = indexPath.row == 1 ? .white : .gray
             cell.optionTextLabel.navigationDelegate = self
             cell.optionTextLabel.tag = indexPath.row + 100
             let htmlHeight = contentHeights?[indexPath.row]
             cell.optionLabelHeight.constant = htmlHeight ?? 0
+            cell.selectionStyle = .none
+            cell.isUserInteractionEnabled = isForAnswers ? false : true
+            cell.accessoryType = option.values.first ?? false ? .checkmark : .none
             return cell
         }
     }
@@ -66,9 +94,15 @@ extension QuestionCell: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row != 0 {
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = cell?.accessoryType == .checkmark ? .none : .checkmark
-        }
+                guard let array = optionsArray else {return}
+                for (index, var dict) in array.enumerated() {
+                    let key = dict.keys.first
+                    dict[key ?? Constants.blankString] = index == indexPath.row ?  true : false
+                    optionsArray?[index] = dict
+                    tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+                }
+                updateValueInStore()
+            }
     }
     
 }

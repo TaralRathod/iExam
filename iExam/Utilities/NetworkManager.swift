@@ -24,7 +24,7 @@ class NetworkManager {
             encoding = URLEncoding.default
         }
         self.method = method
-        print("Service: \(self.url) \n data: \(parameters)")
+        debugPrint("Service: \(self.url) \n data: \(parameters)")
     }
     
     func executeQuery<T>(completion: @escaping (Result<T, Error>) -> Void) where T: Codable {
@@ -37,7 +37,7 @@ class NetworkManager {
                         do {
                             completion(.success(try JSONDecoder().decode(T.self, from: res)))
                         } catch let error {
-                            print(String(data: res, encoding: .utf8) ?? "nothing received")
+                            debugPrint(String(data: res, encoding: .utf8) ?? "nothing received")
                             completion(.failure(error))
                         }
                     default:
